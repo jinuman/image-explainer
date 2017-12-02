@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>IMAGE-EXPLAINER-SERVER</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+</head>
+
+<body>
+<form id="uploadForm">
+    <input type="file" name="userPhoto" id="img_input"/>
+    <input type="submit" value="이미지전송" name="submit">
+</form>
+<br>
+<hr>
+<span id="result"></span>
+</body>
+
+<script>
+
+    $(document).ready(function () {
+        $('#uploadForm').submit(function () {
+            fileUpload();
+            return false;
+        });
+    });
+
+    function fileUpload() {
+        var files = $("#img_input")[0].files;
+
+        upload(0);
+        function upload(i) {
+            var file = files[i];
+            $.ajax({
+                url: '/imageServer/api/photo', // 안드로이드는 이 주소로 전송!
+                data: file,
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                success: function(data){
+                    console.log(data);
+                    $("#result").text(data);
+                },
+                error: function(e){
+                    console.log(e);
+                }
+            });
+        }
+    }
+</script>
+
+</html>
