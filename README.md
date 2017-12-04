@@ -36,6 +36,7 @@
 #### Android
 ```
 Android OS version : 7.0 / API Level : 24
+Permission : 카메라
 
 1. Naver Developers에서 애플리케이션 등록
 2. TTS.java의 CLIENT_ID와 CLIENT_SECRET을 자신의 Client ID와 Client Secret으로 변경
