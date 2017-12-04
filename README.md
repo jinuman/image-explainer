@@ -1,4 +1,4 @@
-# Image-Explainer [시각장애인을 위한 사진 해설 어플리케이션]
+# Image-Explainer [딥러닝을 이용한 정지 영상 해설 생성]
 
 ### 팀원
 - 10 김진우: jinuman
@@ -34,7 +34,13 @@
 2. npm start
 
 #### Android
+```
+Android OS version : 7.0 / API Level : 24
 
+1. Naver Developers에서 애플리케이션 등록
+2. TTS.java의 CLIENT_ID와 CLIENT_SECRET을 자신의 Client ID와 Client Secret으로 변경
+3. SendImage.java에서 SERVER_URL을 자신의 서버주소로 변경
+```
 ---
 ## 참고
 https://github.com/tensorflow/models
